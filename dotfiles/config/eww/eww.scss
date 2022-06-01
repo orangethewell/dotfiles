@@ -1,0 +1,88 @@
+* {
+   all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.bar {
+  background-color: #252A30;
+  color: #b0b4bc;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+// Styles on classes (see eww.yuck for more information)
+
+.sidestuff {
+  padding: 2px 10px;
+}
+
+.workspaces {
+  padding: 2px 10px;
+}
+
+.sidestuff slider {
+  all: unset;
+  color: #ffd5cd;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #E06C75;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #34343F;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.metric scale trough highlight {
+  all: unset;
+  background-color: #E06C75;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #34343F;
+  border-radius: 50px;
+  min-height: 4px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.label-ram {
+  font-size: large;
+}
+.workspaces button.idle{
+  border-radius: 4px;
+  padding: 2px 10px;
+  transition-property: color, background-color;
+  transition-duration: 500ms;
+}
+
+.sidestuff button {
+  transition-property: color;
+  transition-duration: 500ms;
+}
+
+.sidestuff button:hover {
+  color: #E06C75;
+}
+
+.workspaces button:hover{
+  color: #E06C75;
+  background-color: #34343F;
+  font-weight: bold;
+}
+
+.workspaces button.active{
+  border-radius: 4px;
+  color: #E06C75;
+  background-color: #34343F;
+  font-weight: bold;
+}

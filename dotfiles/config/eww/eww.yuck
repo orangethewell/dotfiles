@@ -1,0 +1,87 @@
+(defwidget bar []
+  (centerbox :orientation "h"
+    (workspaces)
+    (music)
+    (sidestuff)))
+
+(defvar tag-one "idle")
+(defvar tag-two "idle")
+(defvar tag-three "idle")
+(defvar tag-four "idle")
+(defvar tag-five "idle")
+(defvar tag-six "idle")
+(defvar tag-seven "idle")
+(defvar tag-eight "idle")
+(defvar tag-nine "idle")
+
+
+(defwidget sidestuff []
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+    (metric :label "🔊"
+            :value volume
+            :onchange "amixer -D pulse sset Master {}%")
+    (metric :label ""
+            :value {EWW_RAM.used_mem_perc}
+            :onchange "")
+    (metric :label "💾"
+            :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
+            :onchange "")
+    (button :onclick "" time)))
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :spacing 10
+    (button :class tag-one :onclick "dwm-msg run_command view 1" 1)
+    (button :class tag-two :onclick "dwm-msg run_command view 2" 2)
+    (button :class tag-three :onclick "dwm-msg run_command view 4" 3)
+    (button :class tag-four :onclick "dwm-msg run_command view 8" 4)
+    (button :class tag-five :onclick "dwm-msg run_command view 16" 5)
+    (button :class tag-six :onclick "dwm-msg run_command view 32" 6)
+    (button :class tag-seven :onclick "dwm-msg run_command view 64" 7)
+    (button :class tag-eight :onclick "dwm-msg run_command view 128" 8)
+    (button :class tag-nine :onclick "dwm-msg run_command view 256" 9)))
+
+(defwidget music []
+  (box :class "music"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    {music != "" ? "🎵${music}" : ""}))
+
+
+(defwidget metric [label value onchange]
+  (box :orientation "h"
+       :class "metric"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active {onchange != ""}
+           :value value
+           :onchange onchange)))
+
+
+
+(deflisten music :initial ""
+  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+
+(defpoll volume :interval "1s"
+  "scripts/getvol")
+
+(defpoll time :interval "1s"
+  "date '+%H:%M:%S | %d de %B, %Y'")
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+		      :y "6px"
+                      :width "98%"
+                      :height "10px"
+                      :anchor "top center")
+  :reserve (struts :side "top" :distance "4%")
+  :wm-ignore true
+  (bar))

@@ -1,0 +1,61 @@
+window:
+  padding:
+    x: 14
+    y: 14
+  decorations: full
+
+shell:
+  program: /bin/zsh
+
+cursor:
+  style:
+    shape: Underline
+    blinking: On
+
+font:
+  normal:
+    family: NerdFire
+    style: Regular
+
+  bold:
+    family: NerdFire
+    style: Bold
+
+  italic:
+    family: NerdFire
+    style: Italic
+
+  bold_italic:
+    family: NerdFire
+    style: Bold Italic
+
+  size: 11
+
+# Colors (One Dark)
+colors:
+  # Default colors
+  primary:
+    background: '0x1e2127'
+    foreground: '0xabb2bf'
+
+  # Normal colors
+  normal:
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xabb2bf'
+
+  # Bright colors
+  bright:
+    black:   '0x5c6370'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xffffff'
