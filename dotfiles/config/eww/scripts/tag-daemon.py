@@ -29,7 +29,6 @@ def main():
             last_tag_name = tag_to_string[last_tag]
             os.system(f"eww update tag-{last_tag_name}='idle'")
             q.task_done()
-            time.sleep(0.5)
 
 threading.Thread(target=main, daemon=True).start()
 print("starting getting dwm-msgs")
