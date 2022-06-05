@@ -6,4 +6,6 @@ wired &
 # Bars
 eww daemon
 eww open bar
-sh ./eww-daemons.sh &
+sleep 1s
+python /home/orangethewell/.config/eww/scripts/tag-daemon.py &
+eww open preview
