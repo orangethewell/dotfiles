@@ -1,3 +1,5 @@
+(include "./preview.yuck")
+
 (defwidget bar []
   (centerbox :orientation "h"
     (workspaces)
@@ -14,19 +16,31 @@
 (defvar tag-eight "idle")
 (defvar tag-nine "idle")
 
+(defvar vreveal false)
+(defvar rreveal false)
+(defvar mreveal false)
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    (metric :label "🔊"
+    (metric :label ""
+            :class "icon"
             :value volume
-            :onchange "amixer -D pulse sset Master {}%")
+            :onchange "amixer -D pulse sset Master {}%"
+            :varname "vreveal"
+            :var vreveal)
     (metric :label ""
+            :class "icon"
             :value {EWW_RAM.used_mem_perc}
-            :onchange "")
-    (metric :label "💾"
+            :onchange ""
+            :varname "rreveal"
+            :var rreveal)
+    (metric :label ""
+            :class "icon"
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
-            :onchange "")
-    (button :onclick "" time)))
+            :onchange ""
+            :varname "mreveal"
+            :var mreveal)
+    (button :class "date" :onclick "EDITOR=nvim PATH=$PATH:/home/orangethewell/.luarocks/bin:~/.luarocks51/bin LUA_CPATH=';;/home/orangethewell/.luarocks51/lib/lua/5.1/?.so' LUA_PATH=';;/home/orangethewell/.luarocks51/share/lua/5.1/?.lua;/home/orangethewell/.luarocks51/share/lua/5.1/?/init.lua' terminal-altty -t 'float' -e 'calcurse'" time)))
 
 (defwidget workspaces []
   (box :class "workspaces"
@@ -49,19 +63,25 @@
        :orientation "h"
        :space-evenly false
        :halign "center"
-    {music != "" ? "🎵${music}" : ""}))
+    {music != "" ? "${music}" : ""}))
 
 
-(defwidget metric [label value onchange]
+(defwidget metric [label value onchange varname var]
+  (eventbox :onhover "eww update ${varname}=true"
+  :onhoverlost "eww update ${varname}=false"
   (box :orientation "h"
        :class "metric"
        :space-evenly false
     (box :class "label" label)
-    (scale :min 0
+    (revealer
+      :reveal var
+      :transition "slideright"
+      :duration "600ms"
+      (scale :min 0
            :max 101
            :active {onchange != ""}
            :value value
-           :onchange onchange)))
+           :onchange onchange)))))
 
 
 
