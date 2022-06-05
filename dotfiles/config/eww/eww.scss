@@ -1,19 +1,52 @@
 * {
    all: unset; //Unsets everything so you can style everything from scratch
+  font-family: Hack Regular; 
 }
 
 //Global Styles
 .bar {
-  background-color: #252A30;
-  color: #b0b4bc;
+  background-color: #13171c;
+  color: #b1b4bc;
   padding: 10px;
   border-radius: 20px;
 }
 
-// Styles on classes (see eww.yuck for more information)
+// Styles on classes (see eww.yuck for more information) 
 
-.sidestuff {
+.defbutton {
+  padding: 16px 8px;
+  background-color: #1344A9;
+  border-radius: 12px;
+  margin: 10px 580px;
+  transition-property: background-color;
+  transition-duration: 500ms;
+}
+
+.middle-box {
+  background-color: rgba(0.0, 0.0, 0.0, 0.5);
+}
+
+.defbutton:hover {
+  background-color: #2374c9;
+}
+
+.defbutton:active {
+  background-color: #113499;
+}
+
+.icon {
+  font-family: "Font Awesome 5 Free Solid";
   padding: 2px 10px;
+  min-width: 20px;
+}
+
+.music {
+  font-family: "Font Awesome 5 Free Solid";
+}
+
+.sidestuff .metric {
+  font-size: 24px;
+  margin: -5px;
 }
 
 .workspaces {
@@ -25,9 +58,13 @@
   color: #ffd5cd;
 }
 
+.label {
+  padding: 2px 10px;
+}
+
 .metric scale trough highlight {
   all: unset;
-  background-color: #E06C75;
+  background-color: #2374C9;
   color: #000000;
   border-radius: 10px;
 }
@@ -42,7 +79,7 @@
 }
 .metric scale trough highlight {
   all: unset;
-  background-color: #E06C75;
+  background-color: #2374c9;
   color: #000000;
   border-radius: 10px;
 }
@@ -56,7 +93,7 @@
   margin-right: 20px;
 }
 .label-ram {
-  font-size: large;
+  font-size: 44px;
 }
 .workspaces button.idle{
   border-radius: 4px;
@@ -65,24 +102,28 @@
   transition-duration: 500ms;
 }
 
-.sidestuff button {
-  transition-property: color;
-  transition-duration: 500ms;
-}
-
-.sidestuff button:hover {
-  color: #E06C75;
-}
-
 .workspaces button:hover{
-  color: #E06C75;
+  color: #2374C9;
   background-color: #34343F;
   font-weight: bold;
 }
 
 .workspaces button.active{
   border-radius: 4px;
-  color: #E06C75;
+  color: #2374C9;
   background-color: #34343F;
   font-weight: bold;
+}
+
+.date {
+  padding: 0px 18px;
+  border-radius: 20px;
+  background-color: #34343f;
+  transition-property: background-color;
+  transition-duration: 500ms;
+}
+
+.date:hover {
+  color: white;
+  background-color: #64646f;
 }
