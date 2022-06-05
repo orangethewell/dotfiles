@@ -108,3 +108,5 @@ require'nvim-tree'.setup{
 }
 
 require("bufferline").setup{}
+require("presence"):setup({})
+require('rust-tools').setup({})

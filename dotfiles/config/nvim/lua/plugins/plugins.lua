@@ -34,4 +34,8 @@ return require('packer').startup(function()
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  use 'ron-rs/ron.vim'
+  use 'elkowar/yuck.vim'
+  use 'andweeb/presence.nvim'
+  use 'simrat39/rust-tools.nvim'
 end)

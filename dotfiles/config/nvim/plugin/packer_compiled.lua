@@ -174,6 +174,21 @@ _G.packer_plugins = {
     path = "/home/orangethewell/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["presence.nvim"] = {
+    loaded = true,
+    path = "/home/orangethewell/.local/share/nvim/site/pack/packer/start/presence.nvim",
+    url = "https://github.com/andweeb/presence.nvim"
+  },
+  ["ron.vim"] = {
+    loaded = true,
+    path = "/home/orangethewell/.local/share/nvim/site/pack/packer/start/ron.vim",
+    url = "https://github.com/ron-rs/ron.vim"
+  },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/orangethewell/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
   ["staline.nvim"] = {
     loaded = true,
     path = "/home/orangethewell/.local/share/nvim/site/pack/packer/start/staline.nvim",
@@ -193,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/orangethewell/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["yuck.vim"] = {
+    loaded = true,
+    path = "/home/orangethewell/.local/share/nvim/site/pack/packer/start/yuck.vim",
+    url = "https://github.com/elkowar/yuck.vim"
   }
 }
 
