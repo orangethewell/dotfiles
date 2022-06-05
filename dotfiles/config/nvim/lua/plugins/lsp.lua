@@ -9,6 +9,29 @@ end
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.sumneko_lua.setup{}
+require'lspconfig'.rust_analyzer.setup {
+  on_attach = on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+      assist = {
+        importMergeBehavior = "last",
+        importPrefix = "by_self",
+      },
+      diagnostics = {
+        disabled = { "unresolved-import" }
+      },
+      cargo = {
+          loadOutDirsFromCheck = true
+      },
+      procMacro = {
+          enable = true
+      },
+      checkOnSave = {
+          command = "clippy"
+      },
+    }
+  }
+}
 require "lsp_signature".setup()
 vim.o.completeopt = 'menuone,noselect'
 
