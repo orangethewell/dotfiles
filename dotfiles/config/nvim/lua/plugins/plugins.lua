@@ -1,4 +1,8 @@
 vim.cmd [[packadd packer.nvim]]
+
+local luarocks = require'packer.luarocks'
+luarocks.setup_paths()
+
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'terroo/vim-simple-emoji'
@@ -38,4 +42,7 @@ return require('packer').startup(function()
   use 'elkowar/yuck.vim'
   use 'andweeb/presence.nvim'
   use 'simrat39/rust-tools.nvim'
+
+  rocks = {'luafilesystem'}
+  use_rocks 'luafilesystem'
 end)

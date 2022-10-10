@@ -1,6 +1,6 @@
 require 'nvim-web-devicons'.get_icons()
 -- Para Barra de status
-require("lfs")
+local lfs = require("lfs")
 
 local function dot_git_exists()
   local path = "./.git"

@@ -8,22 +8,26 @@ config:
   link_on_import: nolink
   longkey: false
 dotfiles:
-  d_eww:
-    src: config/eww
-    dst: ~/.config/eww
-  d_nvim:
-    src: config/nvim
-    dst: ~/.config/nvim
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
-  d_dwm:
-    src: dwm
-    dst: ~/.dwm
+  d_wired:
+    src: config/wired
+    dst: ~/.config/wired
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+  d_xplr:
+    src: config/xplr
+    dst: ~/.config/xplr
+  d_eww:
+    src: config/eww
+    dst: ~/.config/eww
 profiles:
-  manjaro:
+  artix:
     dotfiles:
-    - d_eww
-    - d_nvim
     - d_alacritty
-    - d_dwm
+    - d_wired
+    - d_nvim
+    - d_xplr
+    - d_eww
