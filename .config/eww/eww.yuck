@@ -2,7 +2,17 @@
   (centerbox :orientation "h"
     (workspaces)
     (music)
-    (sidestuff)))
+    (sidestuff))) 
+
+(defvar tag-one "idle")
+(defvar tag-two "idle")
+(defvar tag-three "idle")
+(defvar tag-four "idle")
+(defvar tag-five "idle")
+(defvar tag-six "idle")
+(defvar tag-seven "idle")
+(defvar tag-eight "idle")
+(defvar tag-nine "idle")
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
@@ -23,15 +33,15 @@
        :space-evenly true
        :halign "start"
        :spacing 10
-    (button :onclick "wmctrl -s 0" 1)
-    (button :onclick "wmctrl -s 1" 2)
-    (button :onclick "wmctrl -s 2" 3)
-    (button :onclick "wmctrl -s 3" 4)
-    (button :onclick "wmctrl -s 4" 5)
-    (button :onclick "wmctrl -s 5" 6)
-    (button :onclick "wmctrl -s 6" 7)
-    (button :onclick "wmctrl -s 7" 8)
-    (button :onclick "wmctrl -s 8" 9)
+    (button :class tag-one :onclick "dwm-msg run_command view 1" 1)
+    (button :class tag-two :onclick "dwm-msg run_command view 2" 2)
+    (button :class tag-three :onclick "dwm-msg run_command view 4" 3)
+    (button :class tag-four :onclick "dwm-msg run_command view 8" 4)
+    (button :class tag-five :onclick "dwm-msg run_command view 16" 5)
+    (button :class tag-six :onclick "dwm-msg run_command view 32" 6)
+    (button :class tag-seven :onclick "dwm-msg run_command view 64" 7)
+    (button :class tag-eight :onclick "dwm-msg run_command view 128" 8)
+    (button :class tag-nine :onclick "dwm-msg run_command view 256" 9)
     (label :text "" :class "corner")
     ))
 

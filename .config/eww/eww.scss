@@ -65,9 +65,23 @@
 
 .workspaces button {
   padding: 0px 2px;
+  transition-property: color;
+  transition-duration: 500ms;
 }
 
 .workspaces button:hover {
   color: #D35D6E;
 }
 
+.workspaces button.idle{
+  border-radius: 4px;
+  transition-property: color, background-color;
+  transition-duration: 500ms;
+}
+
+.workspaces button.active{
+  border-radius: 4px;
+  color: #E06C75;
+  background-color: #34343F;
+  font-weight: bold;
+}
