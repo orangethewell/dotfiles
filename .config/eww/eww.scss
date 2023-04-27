@@ -4,16 +4,34 @@
 
 //Global Styles
 .bar {
-  font-family: "FiraCode Nerd Font";
+  font-family: "Minecraft";
+  font-size: 15px;
   background-color: #3a3a3a;
   color: #b0b4bc;
   padding: 10px;
 }
 
 .corner {
+  margin-left: 8px;
+  font-family: "FiraCode Nerd Font";
   color: #303030;
-  font-size: 20px;
+  font-size: 21px;
   background-color: #3a3a3a;
+}
+
+.corner-b {
+  margin-left: 8px;
+  padding-right: 12px;
+  font-family: "FiraCode Nerd Font";
+  color: #3a3a3a;
+  font-size: 21px;
+  background-color: #3f3f5a;
+}
+
+.datetime {
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #3f3f5a;
 }
 
 // Styles on classes (see eww.yuck for more information)
@@ -40,14 +58,13 @@
 }
 .metric scale trough highlight {
   all: unset;
-  background-color: #D35D6E;
+  background-color: #5f5faf;
   color: #000000;
   border-radius: 10px;
 }
 .metric scale trough {
   all: unset;
   background-color: #4e4e4e;
-  border-radius: 50px;
   min-height: 3px;
   min-width: 50px;
   margin-left: 10px;
@@ -64,13 +81,13 @@
 
 
 .workspaces button {
-  padding: 0px 2px;
+  margin: -4px;
   transition-property: color;
   transition-duration: 500ms;
 }
 
 .workspaces button:hover {
-  color: #D35D6E;
+  color: #5f5faf;
 }
 
 .workspaces button.idle{
@@ -81,7 +98,7 @@
 
 .workspaces button.active{
   border-radius: 4px;
-  color: #E06C75;
+  color:#5f5faf;
   background-color: #34343F;
   font-weight: bold;
 }
